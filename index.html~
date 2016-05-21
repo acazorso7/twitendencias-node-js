@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+	<!-- Load c3.css -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Load d3.js and c3.js -->
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  </head>
+  <body>
+    <div id="messages"></div>
+
+	<div id="chart" style="width:100%"></div>
+
+	<p>Date: <input type="text" id="datepicker"></p>
+
+        <input type="radio" name="sentiment" class="positive" value="male">Positive<br>
+  	<input type="radio" name="sentiment" class="negative" value="female">Negative<br>
+
+	<div class="button-search" style="border:1px solid #cccccc; width:100px; background:#eeeeee;">Search</div>
+
+        <div id="tweets" style="width:50%;"></div>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+	<script>
+	
+	$(document).ready(function() {
+	    $('#datepicker').datepicker({ dateFormat: 'dd/mm/yy' });
+	    
+
+		$(".button-search").click(function()
+		{
+		 $("#tweets").empty();
+		 var dataSeleccionada = $("#datepicker").val().replace(/\//g,'');
+		 if($('.positive').is(':checked'))
+		 {
+		   buscarHBase("Positive"+dataSeleccionada);	
+		 }
+		 else
+		 {
+		   buscarHBase("Negative"+dataSeleccionada);	
+		 }
+		});
+	});
+
+	function buscarHBase(key)
+	{
+	$.ajax({
+		type: "GET",
+		contentType: "application/json; charset=utf-8",
+		url: "http://192.168.1.132:1234/Service1.svc/GetTweets?table=analysis&key="+key,
+		success: function(data)
+		{
+		  var totalRowsForKey = data.Row[0].Cell;
+			$.each(totalRowsForKey, function(index, cell){
+			    var score = cell.column.split(":")[1];
+			    var tweetText = cell.dollar;
+			    
+			    $("#tweets").append("<b> Score: "+parseFloat(score)*10+"</b><span>"+tweetText+"</span>");
+			});
+		
+		},
+		error: function(data)
+		{
+		  alert(data);
+		}
+	    });
+	}
+
+	  var positiveScores = ['Positive',0];
+	  var negativeScores = ['Negative',0];
+
+	  var socket = io();
+
+/*	  socket.on('message', function(msg){
+	    $('#messages').append($('<div>').text(msg));
+	  });*/
+
+	
+          /*socket.on('chart', function(msg){
+		dataVector.push(msg);
+		chart.load({
+		  columns: [
+		    dataVector
+		   ]
+		});
+	    
+	  });*/
+		
+	socket.on('chart-sentiment', function(msg){
+		positiveScores.push(msg.positiveScore);
+		negativeScores.push(msg.negativeScore);
+
+		chart.load({
+		  columns: [
+		    positiveScores,
+	            negativeScores
+		   ]
+		});
+	    
+	  });
+
+	var chart = c3.generate({
+	    bindto: '#chart',
+	    data: {
+		columns: [
+		    positiveScores,
+	            negativeScores
+		],
+		type : 'pie'
+	    }
+	});
+
+	/* var chart = c3.generate({
+	    bindto: '#chart',
+	    data: {
+	      columns: [
+		dataVector
+	      ]
+	    }
+	});*/
+	</script>
+  </body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bootstrap Responsive Template</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/theme.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/icons/favicon.ico">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/flexslider.css" rel="stylesheet">
+	<link href="css/jquery.bxslider.css" rel="stylesheet">
+	<link href="css/layerslider.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><b>TweetTendencias:</b> Filtra el estado de ánimo por categorías</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll hvrNav-stat" href="#about">General</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll hvrNav-stat" href="#portfolio">Deportes</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll hvrNav-stat" href="#services">Tecnología</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll hvrNav-stat" href="#testimonials">Política</a>
+                    </li>                  
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+<!--=== Slider ===-->
+<div class="layer_slider">
+    <div id="layerslider-container-fw">        
+        <div id="layerslider" style="width: 100%; height: 250px; margin: 0px auto; ">
+            <!--First Slide-->
+            <div class="ls-layer" style="slidedirection: right; transition2d: 24,25,27,28; ">
+
+                <img src="img/bg/5.jpg" class="ls-bg img-responsive" alt="Slide background">
+				
+				<img src="img/mockup/database.png" alt="Slider Image" class="ls-s-1" style=" top:0px; left: 10px; slidedirection : left; slideoutdirection : bottom; durationin : 1500; durationout : 1500; ">
+                <img src="img/mockup/twitter-bigdata1.png" alt="Slider Image" class="ls-s-1" style=" top:0px; left: 190px; slidedirection : left; slideoutdirection : bottom; durationin : 1500; durationout : 1500; ">
+
+                <span class="ls-s-1" style=" text-transform: uppercase; line-height: 45px; font-size:35px; color:#fff; top:40px; left: 490px; slidedirection : top; slideoutdirection : bototm; durationin : 3500; durationout : 3500; ">
+                    TweetTendencias <br> Analiza el estado de ánimo en tweeter a tiempo real
+                </span>
+            </div>
+            <!--End First Slide-->
+
+            <!--Second Slide-->
+            <div class="ls-layer" style="slidedirection: top; ">
+                <img src="img/bg/5.jpg" class="ls-bg img-responsive" alt="Slide background">
+
+                <i class="icon-chevron-sign-right ls-s-1" style=" color: #fff; font-size: 24px; top:70px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 1500; durationout : 500; "></i> 
+
+                <span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 30px; top:30px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 1500; durationout : 500; ">
+                 Analiza y sacale valor a los datos
+                </span>
+
+               <span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 22px; top:80px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 2500; durationout : 1500; ">
+                <i class="fa fa-check"></i>
+                  Como se sentía la gente
+                </span>
+
+                <span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 22px; top:120px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 3500; durationout : 2500; ">
+                <i class="fa fa-check"></i>
+                   Como se sienten
+                </span>
+				
+				<span class="ls-s-2" style=" color: #fff; font-weight: 200; font-size: 22px; top:160px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 3500; durationout : 2500; ">
+                <i class="fa fa-check"></i>
+                   Como se van a sentir
+                </span>
+
+                <img src="img/mockup/Twitter-logo-blue.png" width="200" alt="Slider Image" class="ls-s-1" style=" top:20px; left: 580px; slidedirection : right; slideoutdirection : bottom; durationin : 1500; durationout : 1500; ">
+				<img src="img/mockup/analyze.png" width="250" alt="Slider Image" class="ls-s-1" style=" top:20px; left: 800px; slidedirection : right; slideoutdirection : bottom; durationin : 1500; durationout : 1500; ">
+            </div>
+            <!--End Second Slide-->
+        </div>         
+    </div>
+</div><!--/layer_slider-->
+<!--=== End Slider ===-->
+
+<section id="real-time" style="padding: 30px; 0px">
+	<div class="container"> 
+		<!-- Service Blocks -->
+		<div class="row">
+			<div class="col-sm-12 text-left">
+				<h2 class="section-heading wow animated pulse animated">Estado de ánimo en tiempo real</h2><hr />
+			</div>
+			<div class="col-sm-4">
+				<div class="service app-block">
+					<h4>Últimos 5 tweets positivos</h4>
+					<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+						<div class="username">
+							<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+						</div>
+						<div class="text">
+							Como mola el mundo del big data, proyecto de post-grado de la UPC.
+						</div>
+					</div>
+					<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+						<div class="username">
+							<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+						</div>
+						<div class="text">
+							Como mola el mundo del big data, proyecto de post-grado de la UPC.
+						</div>
+					</div>
+					<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+						<div class="username">
+							<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+						</div>
+						<div class="text">
+							Como mola el mundo del big data, proyecto de post-grado de la UPC.
+						</div>
+					</div>
+					<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+						<div class="username">
+							<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+						</div>
+						<div class="text">
+							Como mola el mundo del big data, proyecto de post-grado de la UPC.
+						</div>
+					</div>
+					<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+						<div class="username">
+							<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+						</div>
+						<div class="text">
+							Como mola el mundo del big data, proyecto de post-grado de la UPC.
+						</div>
+					</div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+				<div class="service app-block">
+					<h4>Gráfico en tiempo real</h4>
+					<div id="chart">
+					</div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+			<div class="app-block service">
+				<h4>Últimos 5 tweets negativos</h4>
+				<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+					<div class="username">
+						<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+					</div>
+					<div class="text">
+						Como mola el mundo del big data, proyecto de post-grado de la UPC.
+					</div>
+				</div>
+				<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+					<div class="username">
+						<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+					</div>
+					<div class="text">
+						Como mola el mundo del big data, proyecto de post-grado de la UPC.
+					</div>
+				</div>
+				<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+					<div class="username">
+						<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+					</div>
+					<div class="text">
+						Como mola el mundo del big data, proyecto de post-grado de la UPC.
+					</div>
+				</div>
+				<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+					<div class="username">
+						<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+					</div>
+					<div class="text">
+						Como mola el mundo del big data, proyecto de post-grado de la UPC.
+					</div>
+				</div>
+				<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+					<div class="username">
+						<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+					</div>
+					<div class="text">
+						Como mola el mundo del big data, proyecto de post-grado de la UPC.
+					</div>
+				</div>
+			</div>           
+			</div>             
+		</div><!--/row-->
+		<!-- End Service Blokcs -->
+	</div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" style="padding: 30px; 0px">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-left">
+                    <h2 class="section-heading wow animated pulse animated">Busca el estado de ánimo por fecha</h2><hr />
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-sm-12">
+					   <div class="col-sm-4">
+						  <input type="text" class="form-control" placeholder="Elige la fecha" id="datepicker" required data-validation-required-message="Por favor introduce una fecha">
+					   </div>
+					   <div class="col-sm-4">
+						  <button type="submit" class="hvr-bounce-to-right scroll btn button-search"> Buscar </button>
+					   </div>
+                   </div>
+                   <div class="col-sm-6">
+                      <div class="about-panel">
+						  <ul style="margin-top: 50px; font-size: 26px;">
+							<li style="margin-top:10px;">Usuario más positivo: <b>Fernando</b></li>
+							<li style="margin-top:10px;">Usuario más negativo: <b>Chanquete</b></li>
+							<li style="margin-top:10px;">Total tweets positivos: <b>10.000</b></li>
+							<li style="margin-top:10px;">Total tweets negativos: <b>20.000</b></li>
+						  </ul>
+                      </div>
+                   </div>
+				   <div class="col-sm-6">
+						<div id="chart-summary">
+							
+						</div>
+                   </div>
+                   <div class="col-sm-6">
+                        <h4>Los 10 tweets más positivos</h4>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+                   </div>  
+				   <div class="col-sm-6">
+                      <h4>Los 10 tweets más negativos</h4>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
+							<div class="username">
+								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
+							</div>
+							<div class="text">
+								Como mola el mundo del big data, proyecto de post-grado de la UPC.
+							</div>
+						</div>
+                   </div>    
+            </div>           
+        </div>
+    </section>
+
+
+
+    <footer class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="copyright-header">Copyright &copy; 2015</span>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a class="twitter wow animated bounceInDown animated animation-delay-3" href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a class="facebook wow animated bounceInDown animated animation-delay-4" href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a class="linkedin wow animated bounceInDown animated animation-delay-5" href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+    <script src="js/agency.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery-easing-1.3.js"></script>
+    <script src="js/jquery-transit-modified.js"></script>
+    <script src="js/layerslider.transitions.js"></script>
+    <script src="js/layerslider.kreaturamedia.jquery.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/wow.js"></script>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+      	App.init();
+        App.initSliders();
+        App.initBxSlider();
+        Index.initLayerSlider();
+        
+        $('#datepicker').datepicker({ dateFormat: 'dd/mm/yy' });
+        
+        $(".button-search").click(function()
+        {
+            $("#tweets").empty();
+            var dataSeleccionada = $("#datepicker").val().replace(/\//g,'');
+            if($('.positive').is(':checked'))
+            {
+                buscarHBase("Positive"+dataSeleccionada);	
+            }
+            else
+            {
+                buscarHBase("Negative"+dataSeleccionada);	
+            }
+        });
+	});
+    });
+    
+    socket.on('chart-sentiment', function(msg){
+        positiveScores.push(msg.positiveScore);
+        negativeScores.push(msg.negativeScore);
+
+        chart.load({
+          columns: [
+            positiveScores,
+                negativeScores
+           ]
+        });
+    });
+	
+	var positiveScores = ['Positive', 0];
+	var negativeScores = ['Negative', 0];
+    var socket = io();
+	
+	var chart = c3.generate({
+		bindto: '#chart',
+		data: {
+			columns: [positiveScores,
+					  negativeScores],
+			type: 'pie'
+		}
+	});
+	
+	var chartsummary = c3.generate({
+		bindto: '#chart-summary',
+		data: {
+			columns: [positiveScores,
+					  negativeScores],
+			type: 'pie'
+		}
+	});
+    
+    function buscarHBase(key)
+	{
+	    $.ajax({
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: "http://192.168.1.132:1234/Service1.svc/GetTweets?table=analysis&key="+key,
+            success: function(data)
+            {
+              var totalRowsForKey = data.Row[0].Cell;
+                $.each(totalRowsForKey, function(index, cell){
+                    var score = cell.column.split(":")[1];
+                    var tweetText = cell.dollar;
+
+                    $("#tweets").append("<li><b> Score: "+parseFloat(score)*10+"</b>  -  <span>"+tweetText+"</span></li>");
+                });
+
+            },
+            error: function(data)
+            {
+              alert(data);
+            }
+	    });
+	}
+	
+</script>
+
+<script> new WOW().init();</script>
+</body>
+
+</html>
