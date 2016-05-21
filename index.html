@@ -76,7 +76,7 @@
             <!--First Slide-->
             <div class="ls-layer" style="slidedirection: right; transition2d: 24,25,27,28; ">
 
-                <img src="img/bg/5.jpg" class="ls-bg img-responsive" alt="Slide background">
+                <img src="/img/bg/5.jpg" class="ls-bg img-responsive" alt="Slide background">
 				
 				<img src="img/mockup/database.png" alt="Slider Image" class="ls-s-1" style=" top:0px; left: 10px; slidedirection : left; slideoutdirection : bottom; durationin : 1500; durationout : 1500; ">
                 <img src="img/mockup/twitter-bigdata1.png" alt="Slider Image" class="ls-s-1" style=" top:0px; left: 190px; slidedirection : left; slideoutdirection : bottom; durationin : 1500; durationout : 1500; ">
@@ -399,7 +399,8 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
@@ -419,10 +420,13 @@
 	<script src="https://d3js.org/d3.v3.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
 
 <script type="text/javascript">
-    jQuery(document).ready(function() {
+    var positiveScores = ['Positive', 0,2,3,4];
+	var negativeScores = ['Negative', 0,2,3,4];
+    var socket = io();
+    
+    $(document).ready(function() {
       	App.init();
         App.initSliders();
         App.initBxSlider();
@@ -444,7 +448,6 @@
             }
         });
 	});
-    });
     
     socket.on('chart-sentiment', function(msg){
         positiveScores.push(msg.positiveScore);
@@ -458,9 +461,7 @@
         });
     });
 	
-	var positiveScores = ['Positive', 0];
-	var negativeScores = ['Negative', 0];
-    var socket = io();
+	
 	
 	var chart = c3.generate({
 		bindto: '#chart',
