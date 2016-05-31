@@ -13,7 +13,6 @@
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/theme.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
 	<link href="css/animate.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/icons/favicon.ico">
@@ -22,6 +21,9 @@
 	<link href="css/jquery.bxslider.css" rel="stylesheet">
 	<link href="css/layerslider.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+	
 
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -165,7 +167,7 @@
                 </div>
             </div>
             <div class="row">
-                    <div class="col-sm-12">
+                   <div class="col-sm-12">
 					   <div class="col-sm-4">
 						  <input type="text" class="form-control" placeholder="Elige la fecha" id="datepicker" required data-validation-required-message="Por favor introduce una fecha">
 					   </div>
@@ -173,7 +175,9 @@
 						  <button type="submit" class="hvr-bounce-to-right scroll btn button-search"> Buscar </button>
 					   </div>
                    </div>
-                   <div class="col-sm-6">
+			</div>
+			<div class="row" style="margin-top: 40px;">
+                   <!--<div class="col-sm-6">
                       <div class="about-panel">
 						  <ul style="margin-top: 50px; font-size: 26px;">
 							<li style="margin-top:10px;">Usuario más positivo: <b>Fernando</b></li>
@@ -187,113 +191,19 @@
 						<div id="chart-summary">
 							
 						</div>
-                   </div>
+                   </div>-->
                    <div class="col-sm-6">
-                        <h4>Los 10 tweets más positivos</h4>
+					   <h4>Los 10 tweets más positivos del día <span class="selected-date"></span></h4>
 					   <div id="container-positive-tweets-history"> 
-						   <div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-								<div class="username">
-									<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
-								</div>
-								<div class="text">
-									Como mola el mundo del big data, proyecto de post-grado de la UPC.
-								</div>
-							</div>
-							<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-								<div class="username">
-									<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
-								</div>
-								<div class="text">
-									Como mola el mundo del big data, proyecto de post-grado de la UPC.
-								</div>
-							</div>
-							<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-								<div class="username">
-									<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
-								</div>
-								<div class="text">
-									Como mola el mundo del big data, proyecto de post-grado de la UPC.
-								</div>
-							</div>
-							<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-								<div class="username">
-									<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
-								</div>
-								<div class="text">
-									Como mola el mundo del big data, proyecto de post-grado de la UPC.
-								</div>
-							</div>
-							<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-								<div class="username">
-									<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
-								</div>
-								<div class="text">
-									Como mola el mundo del big data, proyecto de post-grado de la UPC.
-								</div>
-							</div>
-							<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-								<div class="username">
-									<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
-								</div>
-								<div class="text">
-									LAST: Como mola el mundo del big data, proyecto de post-grado de la UPC.
-								</div>
-							</div>
+						   
 					   </div>
                    </div>  
 				   <div class="col-sm-6">
-                      <h4>Los 10 tweets más negativos</h4>
+					   <h4>Los 10 tweets más negativos del día <span class="selected-date"></span></h4>
 					   	<div id="container-negative-tweets-history"> 
-						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-							<div class="username">
-								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Chanquete</b>, <span>Puntuación: 8/10</span>
-							</div>
-							<div class="text">
-								Como mola el mundo del big data, proyecto de post-grado de la UPC.
-							</div>
-						</div>
-						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-							<div class="username">
-								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
-							</div>
-							<div class="text">
-								Como mola el mundo del big data, proyecto de post-grado de la UPC.
-							</div>
-						</div>
-						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-							<div class="username">
-								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
-							</div>
-							<div class="text">
-								Como mola el mundo del big data, proyecto de post-grado de la UPC.
-							</div>
-						</div>
-						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-							<div class="username">
-								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
-							</div>
-							<div class="text">
-								Como mola el mundo del big data, proyecto de post-grado de la UPC.
-							</div>
-						</div>
-						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-							<div class="username">
-								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
-							</div>
-							<div class="text">
-								Como mola el mundo del big data, proyecto de post-grado de la UPC.
-							</div>
-						</div>
-						<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">
-							<div class="username">
-								<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>Fernando</b>, <span>Puntuación: 8/10</span>
-							</div>
-							<div class="text">
-								LAST: Como mola el mundo del big data, proyecto de post-grado de la UPC.
-							</div>
-						</div>
+						
 					   </div>
-                   </div>    
+                   </div>
             </div>           
         </div>
     </section>
@@ -329,7 +239,7 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="js/jquery.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/classie.js"></script>
@@ -352,8 +262,8 @@
     <script src="/socket.io/socket.io.js"></script>
 
 <script type="text/javascript">
-    var positiveScores = ['Positive', 0,2,3,4];
-	var negativeScores = ['Negative', 0,2,3,4];
+    var positiveScores = ['Positive', 0,1];
+	var negativeScores = ['Negative', 0,1];
     var socket = io();
     
     $(document).ready(function() {
@@ -363,23 +273,19 @@
         Index.initLayerSlider();
         
         $('#datepicker').datepicker({ dateFormat: 'dd/mm/yy' });
-        
+		
         $(".button-search").click(function()
         {
-            $("#tweets").empty();
-            var dataSeleccionada = $("#datepicker").val().replace(/\//g,'');
-            if($('.positive').is(':checked'))
-            {
-                buscarHBase("Positive"+dataSeleccionada);	
-            }
-            else
-            {
-                buscarHBase("Negative"+dataSeleccionada);	
-            }
+			$("#container-negative-tweets-history").empty();
+			$("#container-positive-tweets-history").empty();
+            var selectedDate = $("#datepicker").val().replace(/\//g,'');
+            buscarHBase("mood", selectedDate);	
+			
+			$(".selected-date").text($("#datepicker").val());
         });
 	});
 	
-	function AddNewTweet(userName, containerToAdd, score, tweetText)
+	function AddNewTweet(userName, containerToAdd, score, tweetText, onlyFiveTweets)
 	{
 		var htmlTweet='<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">';
 		htmlTweet+='<div class="username">';
@@ -389,7 +295,7 @@
 		htmlTweet+=tweetText;
 		htmlTweet+='</div></div>';
 
-		if($("#"+containerToAdd+" .tweet").length > 4)
+		if(onlyFiveTweets && $("#"+containerToAdd+" .tweet").length > 4)
 		{
 			$("#"+containerToAdd+" .tweet:last").remove();
 		}
@@ -401,11 +307,11 @@
 		
 		if(data.posScore > data.negScore)
 		{
-			AddNewTweet(data.user, "container-positive-score", data.posScore, data.tweet);
+			AddNewTweet(data.user, "container-positive-tweets", parseFloat(parseFloat(data.posScore)*10).toFixed(2), data.tweet, true);
 		}
 		else if(data.negScore > data.posScore)
 		{
-			AddNewTweet(data.user, "container-negative-score", data.posScore, data.tweet);
+			AddNewTweet(data.user, "container-negative-tweets", parseFloat(parseFloat(data.negScore)*10).toFixed(2), data.tweet, true);
 		}
 		
         positiveScores.push(data.posScore);
@@ -418,8 +324,6 @@
            ]
         });
     });
-	
-	
 	
 	var chart = c3.generate({
 		bindto: '#chart',
@@ -439,20 +343,31 @@
 		}
 	});
     
-    function buscarHBase(key)
+    function buscarHBase(table, key)
 	{
 	    $.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
-            url: "http://192.168.1.132:1234/Service1.svc/GetTweets?table=mood&key="+key,
+            url: "http://192.168.1.37:1234/Service1.svc/GetTop10PositiveNegativeTweets?table="+table+"&key="+key,
             success: function(data)
             {
-              var totalRowsForKey = data.Row[0].Cell;
-                $.each(totalRowsForKey, function(index, cell){
-                    var score = cell.column.split(":")[1];
-                    var tweetText = cell.dollar;
-
-                    $("#tweets").append("<li><b> Score: "+parseFloat(score)*10+"</b>  -  <span>"+tweetText+"</span></li>");
+				/*var posScore = objMood.posScore;
+				    var negScore = objMood.negScore;
+					var idTweet = objMood.idTweet;
+					var numFollowers = objMood.numFollowers;
+					var location = objMood.location;
+					var sentiment = objMood.sentiment;
+                     var tweet = objMood.tweet;
+					var user = objMood.user;*/
+				
+				//Filling top 10 positive
+				$.each(data.positiveComments, function(index, objMood){
+						AddNewTweet(objMood.user, "container-positive-tweets-history", parseFloat(parseFloat(objMood.posScore)*10).toFixed(2), objMood.tweet, false);
+                });
+				
+				//Filling top 10 negative
+                $.each(data.negativeComments, function(index, objMood){
+						AddNewTweet(objMood.user, "container-negative-tweets-history", parseFloat(parseFloat(objMood.negScore)*10).toFixed(2), objMood.tweet, false);
                 });
 
             },
