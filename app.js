@@ -25,7 +25,6 @@ app.post('/spark-sample',function(req,res){
 });
 
 app.post('/sentiment-analysis',function(req,res){
-  console.log("Positive: "+req.body.positiveScore+" Negative: "+req.body.negativeScore);
   io.emit('chart-sentiment', req.body);
   res.send('POST request to homepage');
 });
