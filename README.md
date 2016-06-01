@@ -1,6 +1,8 @@
 #Node.js Server
 
 First of all, you should install node.js. After that, please follow the notes below.
+  1. Decide where your web server will be listening the peticions (line 39 of app.js)
+  2. Start the web server executing the command "node app" (because our application file is called app.js)
 
 Notes:
 - app.js 
