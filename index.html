@@ -53,16 +53,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="">
-                        <a class="page-scroll hvrNav-stat" href="#about">General</a>
+                        <a class="page-scroll hvrNav-stat" href="#general">General</a>
                     </li>
                     <li class="">
-                        <a class="page-scroll hvrNav-stat" href="#portfolio">Deportes</a>
+                        <a class="page-scroll hvrNav-stat" href="#deportes">Deportes</a>
                     </li>
                     <li class="">
-                        <a class="page-scroll hvrNav-stat" href="#services">Tecnología</a>
+                        <a class="page-scroll hvrNav-stat" href="#tecnologia">Tecnología</a>
                     </li>
                     <li class="">
-                        <a class="page-scroll hvrNav-stat" href="#testimonials">Política</a>
+                        <a class="page-scroll hvrNav-stat" href="#politica">Política</a>
                     </li>                  
                 </ul>
             </div>
@@ -123,7 +123,7 @@
 </div><!--/layer_slider-->
 <!--=== End Slider ===-->
 
-<section id="real-time" style="padding: 30px; 0px">
+<section id="general" style="padding: 30px; 0px">
 	<div class="container"> 
 		<!-- Service Blocks -->
 		<div class="row">
@@ -133,7 +133,7 @@
 			<div class="col-sm-4">
 				<div class="service app-block">
 					<h4>Últimos 5 tweets positivos</h4>
-					<div id="container-positive-tweets">
+					<div id="container-positive-tweets-General">
 						
 					</div>
 				</div>  
@@ -141,14 +141,14 @@
 			<div class="col-sm-4">
 				<div class="service app-block">
 					<h4>Gráfico en tiempo real</h4>
-					<div id="chart">
+					<div id="chart-General">
 					</div>
 				</div>  
 			</div>
 			<div class="col-sm-4">
 			<div class="app-block service">
 				<h4>Últimos 5 tweets negativos</h4>
-				<div id="container-negative-tweets"> 
+				<div id="container-negative-tweets-General"> 
 					
 				</div>
 			</div>           
@@ -208,7 +208,110 @@
         </div>
     </section>
 
+<section id="deportes" style="padding: 30px; 0px">
+	<div class="container"> 
+		<!-- Service Blocks -->
+		<div class="row">
+			<div class="col-sm-12 text-left">
+				<h2 class="section-heading wow animated pulse animated">Estado de ánimo en tiempo real de Deportes</h2><hr />
+			</div>
+			<div class="col-sm-4">
+				<div class="service app-block">
+					<h4>Últimos 5 tweets positivos de Deportes</h4>
+					<div id="container-positive-tweets-Sports">
+						
+					</div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+				<div class="service app-block">
+					<h4>Gráfico en tiempo real de Deportes</h4>
+					<div id="chart-Sports">
+					</div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+			<div class="app-block service">
+				<h4>Últimos 5 tweets negativos de Deportes</h4>
+				<div id="container-negative-tweets-Sports"> 
+					
+				</div>
+			</div>           
+			</div>             
+		</div><!--/row-->
+		<!-- End Service Blokcs -->
+	</div>
+</section>
 
+<section id="tecnologia" style="padding: 30px; 0px">
+	<div class="container"> 
+		<!-- Service Blocks -->
+		<div class="row">
+			<div class="col-sm-12 text-left">
+				<h2 class="section-heading wow animated pulse animated">Estado de ánimo en tiempo real de Tecnología</h2><hr />
+			</div>
+			<div class="col-sm-4">
+				<div class="service app-block">
+					<h4>Últimos 5 tweets positivos de Tecnología</h4>
+					<div id="container-positive-tweets-Tech">
+						
+					</div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+				<div class="service app-block">
+					<h4>Gráfico en tiempo real de Tecnología</h4>
+					<div id="chart-Tech">
+					</div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+			<div class="app-block service">
+				<h4>Últimos 5 tweets negativos de Tecnología</h4>
+				<div id="container-negative-tweets-Tech"> 
+					
+				</div>
+			</div>           
+			</div>             
+		</div><!--/row-->
+		<!-- End Service Blokcs -->
+	</div>
+</section>
+
+<section id="politica" style="padding: 30px; 0px">
+	<div class="container"> 
+		<!-- Service Blocks -->
+		<div class="row">
+			<div class="col-sm-12 text-left">
+				<h2 class="section-heading wow animated pulse animated">Estado de ánimo en tiempo real de Política</h2><hr />
+			</div>
+			<div class="col-sm-4">
+				<div class="service app-block">
+					<h4>Últimos 5 tweets positivos de Política</h4>
+					<div id="container-positive-tweets-Politics">
+						
+					</div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+				<div class="service app-block">
+					<h4>Gráfico en tiempo real de Política</h4>
+					<div id="chart-Politics">
+					</div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+			<div class="app-block service">
+				<h4>Últimos 5 tweets negativos de Política</h4>
+				<div id="container-negative-tweets-Politics"> 
+					
+				</div>
+			</div>           
+			</div>             
+		</div><!--/row-->
+		<!-- End Service Blokcs -->
+	</div>
+</section>
 
     <footer class="copyright">
         <div class="container">
@@ -262,8 +365,8 @@
     <script src="/socket.io/socket.io.js"></script>
 
 <script type="text/javascript">
-    var positiveScores = ['Positive', 0,1];
-	var negativeScores = ['Negative', 0,1];
+    var positiveScores = ['Tweets positivos', 0,1];
+	var negativeScores = ['Tweets negativos', 0,1];
     var socket = io();
     
     $(document).ready(function() {
@@ -283,6 +386,24 @@
 			
 			$(".selected-date").text($("#datepicker").val());
         });
+        
+        
+        
+//         $.ajax({
+//             type: "GET",
+//             contentType: "application/json; charset=utf-8",
+//             url: "http://localhost:7259/twitendencias-realtime-hashtag-WS/services/TwitendenciasHelloWorld/addValue?value="+10,
+//          	crossDomain: true,	
+//             success: function(data)
+//             {
+				
+//             },
+//             error: function(data)
+//             {
+//               alert(data.toSource());
+//             }
+// 	    });
+       
 	});
 	
 	function AddNewTweet(userName, containerToAdd, score, tweetText, onlyFiveTweets)
@@ -304,29 +425,56 @@
 	}
     
     socket.on('chart-sentiment', function(data){
-		
+    	
 		if(data.posScore > data.negScore)
 		{
-			AddNewTweet(data.user, "container-positive-tweets", parseFloat(parseFloat(data.posScore)*10).toFixed(2), data.tweet, true);
+			AddNewTweet(data.user, "container-positive-tweets-" + data.category, parseFloat(parseFloat(data.posScore)*10).toFixed(2), data.tweet, true);
 		}
 		else if(data.negScore > data.posScore)
 		{
-			AddNewTweet(data.user, "container-negative-tweets", parseFloat(parseFloat(data.negScore)*10).toFixed(2), data.tweet, true);
+			AddNewTweet(data.user, "container-negative-tweets-" + data.category, parseFloat(parseFloat(data.negScore)*10).toFixed(2), data.tweet, true);
 		}
 		
         positiveScores.push(data.posScore);
         negativeScores.push(data.negScore);
 
-        chart.load({
-          columns: [
-            positiveScores,
-                negativeScores
-           ]
-        });
+        window["chart" + data.category].load({
+            columns: [
+                      positiveScores,
+                          negativeScores
+                     ]
+                  });
     });
 	
-	var chart = c3.generate({
-		bindto: '#chart',
+	var chartGeneral = c3.generate({
+		bindto: '#chart-General',
+		data: {
+			columns: [positiveScores,
+					  negativeScores],
+			type: 'pie'
+		}
+	});
+	
+	var chartSports = c3.generate({
+		bindto: '#chart-Sports',
+		data: {
+			columns: [positiveScores,
+					  negativeScores],
+			type: 'pie'
+		}
+	});
+	
+	var chartTech = c3.generate({
+		bindto: '#chart-Tech',
+		data: {
+			columns: [positiveScores,
+					  negativeScores],
+			type: 'pie'
+		}
+	});
+	
+	var chartPolitics = c3.generate({
+		bindto: '#chart-Politics',
 		data: {
 			columns: [positiveScores,
 					  negativeScores],
@@ -342,7 +490,7 @@
 			type: 'pie'
 		}
 	});
-    
+	
     function buscarHBase(table, key)
 	{
 	    $.ajax({
