@@ -273,13 +273,13 @@
 					</div>
 			   </div>
 			   <div class="col-sm-6">
-				   <h4>Los 10 tweets más positivos del día de Deportes <span class="selected-date"></span></h4>
+				   <h4>Los 10 tweets más positivos del día <span class="selected-date"></span></h4>
 				   <div id="containerPositiveTweetsHistorySports"> 
 
 				   </div>
 			   </div>  
 			   <div class="col-sm-6">
-				   <h4>Los 10 tweets más negativos del día de Deportes<span class="selected-date"></span></h4>
+				   <h4>Los 10 tweets más negativos del día <span class="selected-date"></span></h4>
 					<div id="containerNegativeTweetsHistorySports"> 
 
 				   </div>
@@ -370,7 +370,7 @@
 			<div class="col-sm-3" style="background-color:#eeeeee; border-color:#999999;">
 				<div class="service app-block">
 					<div class="col-sm-12">Fecha: <input type="text" class="form-control datepicker" placeholder="Elige la fecha" id="datepickerSummary" required data-validation-required-message="Por favor introduce una fecha"></div>
-					<div class="col-sm-12">Concepto: <input type="text" class="form-control" placeholder="Concepto" id="txtConcepto" required data-validation-required-message="Por favor introduce un concepto"></div>
+					<div class="col-sm-12">Concepto: <input type="text" class="form-control" placeholder="Concepto" id="txtConcept" required data-validation-required-message="Por favor introduce un concepto"></div>
 					<div class="col-sm-12" style="margin: 10px 0px;">Categoría: <select id="cboCategorySummary" style="margin: 0px 10px;">
 						<option value="General">General</option>
 						<option value="Sports">Deportes</option>
@@ -386,7 +386,7 @@
 			<div class="col-sm-4">
 				<div class="service app-block">
 					<h4>Top 10 tweets positivos más destacados</h4>
-					<div id="containerPositiveTweetsSummary"> 
+					<div id="containerPositiveTweetsHistorySummary"> 
 					
 				</div>
 				</div>  
@@ -394,7 +394,7 @@
 			<div class="col-sm-4">
 			<div class="app-block service">
 				<h4>Top 10 tweets negativos más destacados</h4>
-				<div id="containerNegativeTweetsSummary"> 
+				<div id="containerNegativeTweetsHistorySummary"> 
 					
 				</div>
 			</div>           
@@ -460,7 +460,8 @@
 	var serviceGetPositiveAndNegativeRatioByDate = "GetPositiveAndNegativeRatioByDate";
 	var serviceGetTweetsByCategoryAndDate = "GetTweetsByCategoryAndDate";
 	var serviceGetTweetsByCategory="GetTweetsByCategory";
-	var serviceWindowsUrl = "http://192.168.1.37:1234";
+	var serviceGetTweetsByCategoryConceptAndDate = "GetTweetsByCategoryConceptAndDate";
+	var serviceWindowsUrl = "http://192.168.1.12:1234";
 	
     var positiveScores = ['Tweets positivos', 0,1];
 	var negativeScores = ['Tweets negativos', 0,1];
@@ -537,41 +538,31 @@
 			$("#containerNegativeTweetsHistorySummary").empty();
 			$("#containerPositiveTweetsHistorySummary").empty();
             var selectedDate = $("#datepickerSummary").val().replace(/\//g,'');
+			if(!selectedDate)
+			{
+				selectedDate= "";
+			}
 		    var category = $("#cboCategorySummary").val();
-			
+			var concept = $("#txtConcept").val();
+			if(!concept)
+			{
+				concept = "";
+			}
 			var params = "key="+selectedDate;
 			var service = serviceGetTop10PositiveNegativeTweets;
 			
 			if(category!="General")
 			{
-				params = "key="+category"-"+selectedDate+"&category="+category;
+				params = "key="+category+"-"+selectedDate+"&category="+category;
 				service = serviceGetTweetsByCategoryAndDate;
 			}
 			
             buscarHBase(service, params, "Summary");	
-		    buscarHBase(serviceGetPositiveAndNegativeRatioByDate, "key="+selectedDate+"&category="+category, "Summary");
+		    buscarHBase(serviceGetTweetsByCategoryConceptAndDate, "category="+category+"&concept="+concept+"&date="+selectedDate, "Summary");
 			
 			$(".selected-date").text($("#datepickerSummary").val());
         });
-        
-//         $.ajax({
-//             type: "GET",
-//             contentType: "application/json; charset=utf-8",
-//             url: "http://localhost:7259/twitendencias-realtime-hashtag-WS/services/TwitendenciasHelloWorld/addValue?value="+10,
-//          	crossDomain: true,	
-//             success: function(data)
-//             {
-				
-//             },
-//             error: function(data)
-//             {
-//               alert(data.toSource());
-//             }
-// 	    });
-       
 	});
-	
-	
     
     socket.on('chart-sentiment', function(data){
     	
@@ -636,7 +627,7 @@
 						callbackGetTop10PositiveNegativeTweets(data);
 						break;
 					case serviceGetPositiveAndNegativeRatioByDate:
-						callbacketPositiveAndNegativeRatioByDate(data, category);
+						callbackGetPositiveAndNegativeRatioByDate(data, category);
 						break;
 					case serviceGetTweetsByCategoryAndDate:
 						callbackGetTweetsByCategoryAndDate(data, category);
@@ -644,13 +635,29 @@
 					case serviceGetTweetsByCategory:
 						callbackGetTweetsByCategory(data);
 						break;
+					case serviceGetTweetsByCategoryConceptAndDate:
+						callbackserviceGetTweetsByCategoryConceptAndDate(data);
+						break;
 				}
             },
             error: function(data)
             {
-              alert(data);
+              alert("Se ha producido un error, vuelve a intentarlo");
             }
 	    });
+	}
+	
+	function callbackserviceGetTweetsByCategoryConceptAndDate(data)
+	{
+		//Filling top 10 positive
+		$.each(data.moodTweets.positiveComments, function(index, objMood){
+				AddNewTweet(objMood.user, "containerPositiveTweetsHistorySummary", parseFloat(parseFloat(objMood.posScore)*10).toFixed(2), objMood.tweet, false);
+		});
+
+		//Filling top 10 negative
+		$.each(data.moodTweets.negativeComments, function(index, objMood){
+				AddNewTweet(objMood.user, "containerNegativeTweetsHistorySummary", parseFloat(parseFloat(objMood.negScore)*10).toFixed(2), objMood.tweet, false);
+		});
 	}
 	
 	function callbackGetTop10PositiveNegativeTweets(data)
@@ -666,18 +673,22 @@
 		});
 	}
 	
-	function callbacketPositiveAndNegativeRatioByDate(data, category)
+	function callbackGetPositiveAndNegativeRatioByDate(data, category)
 	{
-		if(category == "Sports" || category == "General")
-		{
-			var chartsummary = c3.generate({
-			bindto: '#chartSummaryPerDate'+category,
-				data: {
-					columns: [data.positive,
-							  data.negative],
-					type: 'pie'}
-			});
-		}
+		var positiveVec = ["Tweets positivos", 0];
+		var negativeVec = ["Tweets negativos", 0];
+
+		positiveVec.push(data.positive);
+		negativeVec.push(data.negative);
+
+
+		var chartsummary = c3.generate({
+		bindto: '#chartSummaryPerDate'+category,
+			data: {
+				columns: [positiveVec,
+						  negativeVec],
+				type: 'pie'}
+		});
 		
 		$("#totalNegativeTweets"+category).text(data.negative);
 		$("#totalPositiveTweets"+category).text(data.positive);
