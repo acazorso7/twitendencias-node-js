@@ -63,7 +63,10 @@
                     </li>
                     <li class="">
                         <a class="page-scroll hvrNav-stat" href="#politica">Política</a>
-                    </li>                  
+                    </li>  
+					<li class="">
+                        <a class="page-scroll hvrNav-stat" href="#summaries">Histórico</a>
+                    </li> 
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -157,56 +160,52 @@
 		<!-- End Service Blokcs -->
 	</div>
 </section>
-
-    <!-- About Section -->
-    <section id="about" style="padding: 30px; 0px">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-left">
-                    <h2 class="section-heading wow animated pulse animated">Busca el estado de ánimo por fecha</h2><hr />
-                </div>
-            </div>
-            <div class="row">
-                   <div class="col-sm-12">
-					   <div class="col-sm-4">
-						  <input type="text" class="form-control" placeholder="Elige la fecha" id="datepicker" required data-validation-required-message="Por favor introduce una fecha">
-					   </div>
-					   <div class="col-sm-4">
-						  <button type="submit" class="hvr-bounce-to-right scroll btn button-search"> Buscar </button>
-					   </div>
-                   </div>
+<section id="summaryGeneral" style="padding: 30px; 0px">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-left">
+				<h2 class="section-heading wow animated pulse animated">Busca el estado de ánimo por fecha</h2><hr />
 			</div>
-			<div class="row" style="margin-top: 40px;">
-                   <!--<div class="col-sm-6">
-                      <div class="about-panel">
-						  <ul style="margin-top: 50px; font-size: 26px;">
-							<li style="margin-top:10px;">Usuario más positivo: <b>Fernando</b></li>
-							<li style="margin-top:10px;">Usuario más negativo: <b>Chanquete</b></li>
-							<li style="margin-top:10px;">Total tweets positivos: <b>10.000</b></li>
-							<li style="margin-top:10px;">Total tweets negativos: <b>20.000</b></li>
-						  </ul>
-                      </div>
-                   </div>
-				   <div class="col-sm-6">
-						<div id="chart-summary">
-							
-						</div>
-                   </div>-->
-                   <div class="col-sm-6">
-					   <h4>Los 10 tweets más positivos del día <span class="selected-date"></span></h4>
-					   <div id="container-positive-tweets-history"> 
-						   
-					   </div>
-                   </div>  
-				   <div class="col-sm-6">
-					   <h4>Los 10 tweets más negativos del día <span class="selected-date"></span></h4>
-					   	<div id="container-negative-tweets-history"> 
-						
-					   </div>
-                   </div>
-            </div>           
-        </div>
-    </section>
+		</div>
+		<div class="row">
+			   <div class="col-sm-12">
+				   <div class="col-sm-4">
+					  <input type="text" class="form-control datepicker" placeholder="Elige la fecha" id="datepickerGeneral" required data-validation-required-message="Por favor introduce una fecha">
+				   </div>
+				   <div class="col-sm-4">
+					  <button type="submit" class="hvr-bounce-to-right scroll btn button-search" id="buttonSearchGeneral"> Buscar </button>
+				   </div>
+			   </div>
+		</div>
+		<div class="row" style="margin-top: 40px;">
+			   <div class="col-sm-6">
+				  <div class="about-panel">
+					  <ul style="margin-top: 50px; font-size: 26px;">
+						<li style="margin-top:10px;">Total tweets positivos: <b id="totalPositiveTweetsGeneral">-</b></li>
+						<li style="margin-top:10px;">Total tweets negativos: <b id="totalNegativeTweetsGeneral">-</b></li>
+					  </ul>
+				  </div>
+			   </div>
+			   <div class="col-sm-6">
+					<div id="chartSummaryPerDateGeneral">
+
+					</div>
+			   </div>
+			   <div class="col-sm-6">
+				   <h4>Los 10 tweets más positivos del día <span class="selected-date"></span></h4>
+				   <div id="containerPositiveTweetsHistoryGeneral"> 
+
+				   </div>
+			   </div>  
+			   <div class="col-sm-6">
+				   <h4>Los 10 tweets más negativos del día <span class="selected-date"></span></h4>
+					<div id="containerNegativeTweetsHistoryGeneral"> 
+
+				   </div>
+			   </div>
+		</div>           
+	</div>
+</section>
 
 <section id="deportes" style="padding: 30px; 0px">
 	<div class="container"> 
@@ -240,6 +239,52 @@
 			</div>             
 		</div><!--/row-->
 		<!-- End Service Blokcs -->
+	</div>
+</section>
+<section id="summarySports" style="padding: 30px; 0px">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-left">
+				<h2 class="section-heading wow animated pulse animated">Busca el estado de ánimo para Deportes por fecha</h2><hr />
+			</div>
+		</div>
+		<div class="row">
+			   <div class="col-sm-12">
+				   <div class="col-sm-4">
+					  <input type="text" class="form-control datepicker" placeholder="Elige la fecha" id="datepickerSports" required data-validation-required-message="Por favor introduce una fecha">
+				   </div>
+				   <div class="col-sm-4">
+					  <button type="submit" class="hvr-bounce-to-right scroll btn button-search" id="buttonSearchSports"> Buscar </button>
+				   </div>
+			   </div>
+		</div>
+		<div class="row" style="margin-top: 40px;">
+			   <div class="col-sm-6">
+				  <div class="about-panel">
+					  <ul style="margin-top: 50px; font-size: 26px;">
+						<li style="margin-top:10px;">Total tweets positivos: <b id="totalPositiveTweetsSports">-</b></li>
+						<li style="margin-top:10px;">Total tweets negativos: <b id="totalNegativeTweetsSports">-</b></li>
+					  </ul>
+				  </div>
+			   </div>
+			   <div class="col-sm-6">
+					<div id="chartSummaryPerDateSports">
+
+					</div>
+			   </div>
+			   <div class="col-sm-6">
+				   <h4>Los 10 tweets más positivos del día de Deportes <span class="selected-date"></span></h4>
+				   <div id="containerPositiveTweetsHistorySports"> 
+
+				   </div>
+			   </div>  
+			   <div class="col-sm-6">
+				   <h4>Los 10 tweets más negativos del día de Deportes<span class="selected-date"></span></h4>
+					<div id="containerNegativeTweetsHistorySports"> 
+
+				   </div>
+			   </div>
+		</div>           
 	</div>
 </section>
 
@@ -312,6 +357,52 @@
 		<!-- End Service Blokcs -->
 	</div>
 </section>
+	
+<section id="summary" style="padding: 30px; 0px">
+	<div class="container"> 
+		<!-- Service Blocks -->
+		<div class="row">
+			<div class="col-sm-12 text-left">
+				<h2 class="section-heading wow animated pulse animated">¡Busca información en nuestra base de datos!</h2>
+				<p>A nosotros no nos importa compartir la información almacenada. ¡Seguro que sabes como darle utilidad!</p>
+				<hr />
+			</div>
+			<div class="col-sm-3" style="background-color:#eeeeee; border-color:#999999;">
+				<div class="service app-block">
+					<div class="col-sm-12">Fecha: <input type="text" class="form-control datepicker" placeholder="Elige la fecha" id="datepickerSummary" required data-validation-required-message="Por favor introduce una fecha"></div>
+					<div class="col-sm-12">Concepto: <input type="text" class="form-control" placeholder="Concepto" id="txtConcepto" required data-validation-required-message="Por favor introduce un concepto"></div>
+					<div class="col-sm-12" style="margin: 10px 0px;">Categoría: <select id="cboCategorySummary" style="margin: 0px 10px;">
+						<option value="General">General</option>
+						<option value="Sports">Deportes</option>
+						<option value="Politics">Política</option>
+						<option value="Tech">Tecnología</option>
+													 </select>
+					</div>
+					<div class="col-sm-4">
+					  <button type="submit" class="hvr-bounce-to-right scroll btn button-search" id="buttonSearchSummary"> Buscar </button>
+				    </div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+				<div class="service app-block">
+					<h4>Top 10 tweets positivos más destacados</h4>
+					<div id="containerPositiveTweetsSummary"> 
+					
+				</div>
+				</div>  
+			</div>
+			<div class="col-sm-4">
+			<div class="app-block service">
+				<h4>Top 10 tweets negativos más destacados</h4>
+				<div id="containerNegativeTweetsSummary"> 
+					
+				</div>
+			</div>           
+			</div>             
+		</div><!--/row-->
+		<!-- End Service Blokcs -->
+	</div>
+</section>
 
     <footer class="copyright">
         <div class="container">
@@ -365,86 +456,15 @@
     <script src="/socket.io/socket.io.js"></script>
 
 <script type="text/javascript">
+	var serviceGetTop10PositiveNegativeTweets = "GetTop10PositiveNegativeTweets";
+	var serviceGetPositiveAndNegativeRatioByDate = "GetPositiveAndNegativeRatioByDate";
+	var serviceGetTweetsByCategoryAndDate = "GetTweetsByCategoryAndDate";
+	var serviceGetTweetsByCategory="GetTweetsByCategory";
+	var serviceWindowsUrl = "http://192.168.1.37:1234";
+	
     var positiveScores = ['Tweets positivos', 0,1];
 	var negativeScores = ['Tweets negativos', 0,1];
     var socket = io();
-    
-    $(document).ready(function() {
-      	App.init();
-        App.initSliders();
-        App.initBxSlider();
-        Index.initLayerSlider();
-        
-        $('#datepicker').datepicker({ dateFormat: 'dd/mm/yy' });
-		
-        $(".button-search").click(function()
-        {
-			$("#container-negative-tweets-history").empty();
-			$("#container-positive-tweets-history").empty();
-            var selectedDate = $("#datepicker").val().replace(/\//g,'');
-            buscarHBase("mood", selectedDate);	
-			
-			$(".selected-date").text($("#datepicker").val());
-        });
-        
-        
-        
-//         $.ajax({
-//             type: "GET",
-//             contentType: "application/json; charset=utf-8",
-//             url: "http://localhost:7259/twitendencias-realtime-hashtag-WS/services/TwitendenciasHelloWorld/addValue?value="+10,
-//          	crossDomain: true,	
-//             success: function(data)
-//             {
-				
-//             },
-//             error: function(data)
-//             {
-//               alert(data.toSource());
-//             }
-// 	    });
-       
-	});
-	
-	function AddNewTweet(userName, containerToAdd, score, tweetText, onlyFiveTweets)
-	{
-		var htmlTweet='<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">';
-		htmlTweet+='<div class="username">';
-		htmlTweet+='<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>'+userName+'</b>, <span>Puntuación: '+score+'/10</span>';
-		htmlTweet+='</div>';
-		htmlTweet+='<div class="text">';
-		htmlTweet+=tweetText;
-		htmlTweet+='</div></div>';
-
-		if(onlyFiveTweets && $("#"+containerToAdd+" .tweet").length > 4)
-		{
-			$("#"+containerToAdd+" .tweet:last").remove();
-		}
-		
-		$("#"+containerToAdd).prepend(htmlTweet);	
-	}
-    
-    socket.on('chart-sentiment', function(data){
-    	
-		if(data.posScore > data.negScore)
-		{
-			AddNewTweet(data.user, "container-positive-tweets-" + data.category, parseFloat(parseFloat(data.posScore)*10).toFixed(2), data.tweet, true);
-		}
-		else if(data.negScore > data.posScore)
-		{
-			AddNewTweet(data.user, "container-negative-tweets-" + data.category, parseFloat(parseFloat(data.negScore)*10).toFixed(2), data.tweet, true);
-		}
-		
-        positiveScores.push(data.posScore);
-        negativeScores.push(data.negScore);
-
-        window["chart" + data.category].load({
-            columns: [
-                      positiveScores,
-                          negativeScores
-                     ]
-                  });
-    });
 	
 	var chartGeneral = c3.generate({
 		bindto: '#chart-General',
@@ -481,22 +501,124 @@
 			type: 'pie'
 		}
 	});
-	
-	var chartsummary = c3.generate({
-		bindto: '#chart-summary',
-		data: {
-			columns: [positiveScores,
-					  negativeScores],
-			type: 'pie'
-		}
+    
+    $(document).ready(function() {
+      	App.init();
+        App.initSliders();
+        App.initBxSlider();
+        Index.initLayerSlider();
+        
+        $('.datepicker').datepicker({ dateFormat: 'dd/mm/yy' });
+		
+        $("#buttonSearchGeneral").click(function()
+        {
+			$("#containerNegativeTweetsHistoryGeneral").empty();
+			$("#containerPositiveTweetsHistoryGeneral").empty();
+            var selectedDate = $("#datepickerGeneral").val().replace(/\//g,'');
+            buscarHBase(serviceGetTop10PositiveNegativeTweets, "key="+selectedDate);	
+		    buscarHBase(serviceGetPositiveAndNegativeRatioByDate, "key="+selectedDate+"&category=General", "General");
+			
+			$(".selected-date").text($("#datepickerGeneral").val());
+        });
+		
+		$("#buttonSearchSports").click(function()
+        {
+			$("#containerNegativeTweetsHistorySports").empty();
+			$("#containerPositiveTweetsHistorySports").empty();
+            var selectedDate = $("#datepickerSports").val().replace(/\//g,'');
+            buscarHBase(serviceGetTweetsByCategoryAndDate, "key="+selectedDate+"&category=Sports", "Sports");	
+		    buscarHBase(serviceGetPositiveAndNegativeRatioByDate, "key="+selectedDate+"&category=Sports", "Sports");
+			
+			$(".selected-date").text($("#datepickerSports").val());
+        });
+		
+		$("#buttonSearchSummary").click(function()
+        {
+			$("#containerNegativeTweetsHistorySummary").empty();
+			$("#containerPositiveTweetsHistorySummary").empty();
+            var selectedDate = $("#datepickerSummary").val().replace(/\//g,'');
+		    var category = $("#cboCategorySummary").val();
+			
+			var params = "key="+selectedDate;
+			var service = serviceGetTop10PositiveNegativeTweets;
+			
+			if(category!="General")
+			{
+				params = "key="+selectedDate+"&category="+category;
+				service = serviceGetTweetsByCategoryAndDate;
+			}
+			
+            buscarHBase(service, params, "Summary");	
+		    buscarHBase(serviceGetPositiveAndNegativeRatioByDate, "key="+selectedDate+"&category="+category, "Summary");
+			
+			$(".selected-date").text($("#datepickerSports").val());
+        });
+        
+//         $.ajax({
+//             type: "GET",
+//             contentType: "application/json; charset=utf-8",
+//             url: "http://localhost:7259/twitendencias-realtime-hashtag-WS/services/TwitendenciasHelloWorld/addValue?value="+10,
+//          	crossDomain: true,	
+//             success: function(data)
+//             {
+				
+//             },
+//             error: function(data)
+//             {
+//               alert(data.toSource());
+//             }
+// 	    });
+       
 	});
 	
-    function buscarHBase(table, key)
+	
+    
+    socket.on('chart-sentiment', function(data){
+    	
+		if(data.posScore > data.negScore)
+		{
+			AddNewTweet(data.user, "container-positive-tweets-" + data.category, parseFloat(parseFloat(data.posScore)*10).toFixed(2), data.tweet, true);
+		}
+		else if(data.negScore > data.posScore)
+		{
+			AddNewTweet(data.user, "container-negative-tweets-" + data.category, parseFloat(parseFloat(data.negScore)*10).toFixed(2), data.tweet, true);
+		}
+		
+        positiveScores.push(data.posScore);
+        negativeScores.push(data.negScore);
+
+        window["chart" + data.category].load({
+            columns: [
+                      positiveScores,
+					  negativeScores
+                     ]
+                  });
+    });
+	
+	function AddNewTweet(userName, containerToAdd, score, tweetText, onlyFiveTweets)
+	{
+		var htmlTweet='<div class="tweet" style="border-bottom: 1px solid #aaaaaa; padding: 10px 5px; background-color: #eeeeee;text-align:left;">';
+		htmlTweet+='<div class="username">';
+		htmlTweet+='<img src="img/mockup/Twitter-logo-blue.png" width="30" style="margin-right: 5px;" ><b>'+userName+'</b>, <span>Puntuación: '+score+'/10</span>';
+		htmlTweet+='</div>';
+		htmlTweet+='<div class="text">';
+		htmlTweet+=tweetText;
+		htmlTweet+='</div></div>';
+
+		if(onlyFiveTweets && $("#"+containerToAdd+" .tweet").length > 4)
+		{
+			$("#"+containerToAdd+" .tweet:last").remove();
+		}
+		
+		$("#"+containerToAdd).prepend(htmlTweet);	
+	}
+	
+    function buscarHBase(serviceName, params, category)
 	{
 	    $.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
-            url: "http://192.168.1.37:1234/Service1.svc/GetTop10PositiveNegativeTweets?table="+table+"&key="+key,
+            url: serviceWindowsUrl+"/ServiceHBase.svc/"+serviceName+"?"+params,
             success: function(data)
             {
 				/*var posScore = objMood.posScore;
@@ -508,22 +630,74 @@
                      var tweet = objMood.tweet;
 					var user = objMood.user;*/
 				
-				//Filling top 10 positive
-				$.each(data.positiveComments, function(index, objMood){
-						AddNewTweet(objMood.user, "container-positive-tweets-history", parseFloat(parseFloat(objMood.posScore)*10).toFixed(2), objMood.tweet, false);
-                });
-				
-				//Filling top 10 negative
-                $.each(data.negativeComments, function(index, objMood){
-						AddNewTweet(objMood.user, "container-negative-tweets-history", parseFloat(parseFloat(objMood.negScore)*10).toFixed(2), objMood.tweet, false);
-                });
-
+				switch(serviceName)
+				{
+					case serviceGetTop10PositiveNegativeTweets:
+						callbackGetTop10PositiveNegativeTweets(data);
+						break;
+					case serviceGetPositiveAndNegativeRatioByDate:
+						callbacketPositiveAndNegativeRatioByDate(data, category);
+						break;
+					case serviceGetTweetsByCategoryAndDate:
+						callbackGetTweetsByCategoryAndDate(data);
+						break;
+					case serviceGetTweetsByCategory:
+						callbackGetTweetsByCategory(data);
+						break;
+				}
             },
             error: function(data)
             {
               alert(data);
             }
 	    });
+	}
+	
+	function callbackGetTop10PositiveNegativeTweets(data)
+	{
+		//Filling top 10 positive
+		$.each(data.positiveComments, function(index, objMood){
+				AddNewTweet(objMood.user, "containerPositiveTweetsHistoryGeneral", parseFloat(parseFloat(objMood.posScore)*10).toFixed(2), objMood.tweet, false);
+		});
+
+		//Filling top 10 negative
+		$.each(data.negativeComments, function(index, objMood){
+				AddNewTweet(objMood.user, "containerNegativeTweetsHistoryGeneral", parseFloat(parseFloat(objMood.negScore)*10).toFixed(2), objMood.tweet, false);
+		});
+	}
+	
+	function callbacketPositiveAndNegativeRatioByDate(data, category)
+	{
+		if(category == "Sports" || category == "General")
+		{
+			var chartsummary = c3.generate({
+			bindto: '#chartSummaryPerDate'+category,
+				data: {
+					columns: [data.positive,
+							  data.negative],
+					type: 'pie'}
+			});
+		}
+		
+		$("#totalNegativeTweets"+category).text(data.negative);
+		$("#totalPositiveTweets"+category).text(data.positive);
+	}
+	
+	function callbackGetTweetsByCategoryAndDate(data, category)
+	{
+		//Filling top 10 positive
+		$.each(data.positiveComments, function(index, objMood){
+				AddNewTweet(objMood.user, "containerPositiveTweetsHistory"+category, parseFloat(parseFloat(objMood.posScore)*10).toFixed(2), objMood.tweet, false);
+		});
+
+		//Filling top 10 negative
+		$.each(data.negativeComments, function(index, objMood){
+				AddNewTweet(objMood.user, "containerNegativeTweetsHistory"+category, parseFloat(parseFloat(objMood.negScore)*10).toFixed(2), objMood.tweet, false);
+		});
+	}
+	function callbackGetTweetsByCategory(data)
+	{
+		
 	}
 	
 </script>
