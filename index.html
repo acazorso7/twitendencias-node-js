@@ -526,7 +526,7 @@
 			$("#containerNegativeTweetsHistorySports").empty();
 			$("#containerPositiveTweetsHistorySports").empty();
             var selectedDate = $("#datepickerSports").val().replace(/\//g,'');
-            buscarHBase(serviceGetTweetsByCategoryAndDate, "key="+selectedDate+"&category=Sports", "Sports");	
+            buscarHBase(serviceGetTweetsByCategoryAndDate, "key=Sports-"+selectedDate+"&category=Sports", "Sports");	
 		    buscarHBase(serviceGetPositiveAndNegativeRatioByDate, "key="+selectedDate+"&category=Sports", "Sports");
 			
 			$(".selected-date").text($("#datepickerSports").val());
@@ -544,14 +544,14 @@
 			
 			if(category!="General")
 			{
-				params = "key="+selectedDate+"&category="+category;
+				params = "key="+category"-"+selectedDate+"&category="+category;
 				service = serviceGetTweetsByCategoryAndDate;
 			}
 			
             buscarHBase(service, params, "Summary");	
 		    buscarHBase(serviceGetPositiveAndNegativeRatioByDate, "key="+selectedDate+"&category="+category, "Summary");
 			
-			$(".selected-date").text($("#datepickerSports").val());
+			$(".selected-date").text($("#datepickerSummary").val());
         });
         
 //         $.ajax({
@@ -639,7 +639,7 @@
 						callbacketPositiveAndNegativeRatioByDate(data, category);
 						break;
 					case serviceGetTweetsByCategoryAndDate:
-						callbackGetTweetsByCategoryAndDate(data);
+						callbackGetTweetsByCategoryAndDate(data, category);
 						break;
 					case serviceGetTweetsByCategory:
 						callbackGetTweetsByCategory(data);
