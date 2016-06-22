@@ -254,7 +254,7 @@
 					  <input type="text" class="form-control datepicker" placeholder="Elige la fecha" id="datepickerSports" required data-validation-required-message="Por favor introduce una fecha">
 				   </div>
 				   <div class="col-sm-4">
-					  <button type="submit" class="hvr-bounce-to-right scroll btn button-search" id="buttonSearchSports"> Buscar </button>
+					  <button type="submit" class="hvr-bounce-to-right btn button-search" id="buttonSearchSports"> Buscar </button>
 				   </div>
 			   </div>
 		</div>
@@ -379,7 +379,7 @@
 													 </select>
 					</div>
 					<div class="col-sm-4">
-					  <button type="submit" class="hvr-bounce-to-right scroll btn button-search" id="buttonSearchSummary"> Buscar </button>
+					  <button type="submit" class="hvr-bounce-to-right btn button-search" id="buttonSearchSummary"> Buscar </button>
 				    </div>
 				</div>  
 			</div>
@@ -548,16 +548,7 @@
 			{
 				concept = "";
 			}
-			var params = "key="+selectedDate;
-			var service = serviceGetTop10PositiveNegativeTweets;
 			
-			if(category!="General")
-			{
-				params = "key="+category+"-"+selectedDate+"&category="+category;
-				service = serviceGetTweetsByCategoryAndDate;
-			}
-			
-            buscarHBase(service, params, "Summary");	
 		    buscarHBase(serviceGetTweetsByCategoryConceptAndDate, "category="+category+"&concept="+concept+"&date="+selectedDate, "Summary");
 			
 			$(".selected-date").text($("#datepickerSummary").val());
